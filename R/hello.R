@@ -15,5 +15,6 @@
 
 
 linear_regression = function (X, Y) {
+  X = cbind(rep(1, nrow(X)), X)
   return(solve(t(X) %*% X) %*% t(X) %*% Y)
 }
