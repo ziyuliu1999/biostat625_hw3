@@ -1,0 +1,20 @@
+---
+title: "linear_regression"
+output: pdf_document
+---
+
+```{r}
+library(hwlm)
+```
+
+```{r}
+x = matrix(rnorm(3*100), nrow = 100, ncol = 3)
+y = matrix(rnorm(1*100), nrow = 100, ncol = 1)
+linear_regression(x, y)
+res = linear_regression(x, y)
+```
+
+```{r}
+plot(x %*% res, y)
+```
+
