@@ -33,3 +33,5 @@ linear_regression = function (X, Y) {
   return(print_tble)
 }
 
+
+usethis::use_github_actions()
