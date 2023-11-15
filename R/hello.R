@@ -16,5 +16,20 @@
 
 linear_regression = function (X, Y) {
   X = cbind(rep(1, nrow(X)), X)
-  return(solve(t(X) %*% X) %*% t(X) %*% Y)
+  beta_hat = solve(t(X) %*% X) %*% t(X) %*% Y
+  err_var = sum((X %*% beta_hat - Y)^2) / (nrow(X) - ncol(X))
+  std_err = sqrt(err_var)
+  std_err_1 = c()
+  for (i in 1:nrow(beta_hat)) {
+    std_err_l = c(std_err_l, sqrt(solve((t(X) %*% X))[i,i] * err_var))
+  }
+  t_val = beta_hat / std_err_1
+  p_val = c()
+  for (i in 1:nrow(t_val)) {
+    p_val = c(p_val, 2 * pt(abs(t_val[i]), df = nrow(X) - ncol(X), lower.tail = FALSE))
+  }
+  print_tble = cbind(beta_hat, std_err_1, t_val, p_val)
+  colnames(print_tble) = c("Estimate", "Std.Error", "t value", "Pr(>|t|)")
+  return(print_tble)
 }
+
