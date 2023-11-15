@@ -1,6 +1,6 @@
-#'hw_linear_regression
+#'linear_regression
 #
-#'Get the linear regression paramter
+#'Get the linear regression parameters
 #'
 #'@param X predictors values
 #'@param Y response values

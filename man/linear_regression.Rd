@@ -2,8 +2,8 @@
 % Please edit documentation in R/hello.R
 \name{linear_regression}
 \alias{linear_regression}
-\title{hw_linear_regression
-Get the linear regression paramter}
+\title{linear_regression
+Get the linear regression parameters}
 \usage{
 linear_regression(X, Y)
 }
@@ -15,8 +15,8 @@ linear_regression(X, Y)
 return the least squares estimates in matrix notation}
 }
 \description{
-hw_linear_regression
-Get the linear regression paramter
+linear_regression
+Get the linear regression parameters
 }
 \examples{
 linear_regression(X = matrix(rnorm(3*100), nrow = 100, ncol = 3), Y = matrix(rnorm(1*100), nrow = 100, ncol = 1))

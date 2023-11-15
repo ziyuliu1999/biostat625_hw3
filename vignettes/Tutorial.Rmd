@@ -5,14 +5,43 @@ output: pdf_document
 
 ```{r}
 library(hwlm)
+
 ```
 
 ```{r}
 x = matrix(rnorm(3*100), nrow = 100, ncol = 3)
 y = matrix(rnorm(1*100), nrow = 100, ncol = 1)
-linear_regression(x, y)
 res = linear_regression(x, y)
 ```
+
+```{r}
+lm_res = lm(y ~ x)$coefficients
+```
+
+
+```{r}
+lm_res = as.matrix(lm_res)
+```
+
+
+```{r}
+lm_res[1, 1] == res[1, 1]
+```
+
+```{r}
+rownames(lm_res) = c("1", "2", "3", "4")
+rownames(res) = c("1", "2", "3", "4")
+```
+
+
+```{r}
+usethis::use_testthat()
+```
+```{r}
+usethis::use_test("linear_regression")
+```
+
+
 
 ```{r}
 plot(x %*% res, y)
