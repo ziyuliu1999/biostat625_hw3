@@ -18,10 +18,17 @@ res = linear_regression(x, y)
 lm_res = lm(y ~ x)$coefficients
 ```
 
+```{r}
+res
+```
 
 
 ```{r}
 lm_res = as.matrix(lm_res)
+```
+
+```{r}
+lm_res
 ```
 
 
