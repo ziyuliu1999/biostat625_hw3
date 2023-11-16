@@ -34,4 +34,4 @@ linear_regression = function (X, Y) {
 }
 
 
-usethis::use_github_actions()
+
