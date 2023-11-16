@@ -19,6 +19,7 @@ lm_res = lm(y ~ x)$coefficients
 ```
 
 
+
 ```{r}
 lm_res = as.matrix(lm_res)
 ```
