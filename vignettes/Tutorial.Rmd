@@ -5,7 +5,7 @@ output: pdf_document
 
 ```{r}
 library(hwlm)
-
+set.seed(1)
 ```
 
 ```{r}
@@ -18,9 +18,9 @@ res = linear_regression(x, y)
 lm_res = lm(y ~ x)$coefficients
 ```
 
-```{r}
-res
-```
+
+
+
 
 
 ```{r}
